@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hakkımda — Muhammed Hamza Karamanlı</title>
+  <meta name="description" content="Muhammed Hamza Karamanlı hakkında — Yazılım Mühendisliği, ÇankaYazılım ve iş deneyimi.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a class="brand" href="index.html">
+      <img src="assets/profil.jpg" alt="Muhammed Hamza Karamanlı">
+      Muhammed Hamza Karamanlı
+    </a>
+    <a href="index.html#hizmetler">Hizmetler</a>
+    <a href="index.html#projeler">Projeler</a>
+    <a href="index.html#iletisim">İletişim</a>
+    <a href="hakkimda.html">Hakkımda</a>
+    <a class="lang" href="en/about.html">EN</a>
+  </div>
+</nav>
+
+<section id="hakkimda" style="padding-top: 140px;">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Hakkımda</div>
+    </div>
+    <p class="reveal" style="max-width: 720px;">Çankaya Üniversitesi'nde <strong>Yazılım Mühendisliği</strong> okuyorum. <strong>ÇankaYazılım</strong> grubunun kurucusu ve takım yöneticisiyim. Stajlarımda ve okulda kritik görevler üstlendim; süreç yönetimi, planlama, gereksinim analizi, yazılım tasarımı ve yazılım yaşam döngüsünün kalan tüm aşamalarında deneyim sahibiyim.</p>
+    <p class="reveal" style="max-width: 720px; margin-top: 12px;">Yeni teknolojileri yalnızca kullanmak değil, <strong>üretmek</strong> tarafındayım: hazır çözümlere yaslanmak yerine problemin kendisine inip sistemi baştan tasarlamayı tercih ediyorum.</p>
+  </div>
+</section>
+
+<section id="deneyim" class="alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Deneyim</div>
+    </div>
+    <div class="timeline">
+      <div class="item reveal">
+        <div class="item-row">
+          <div>
+            <h3>LENORA Bilişim Teknolojileri — Full-Stack AI Developer Intern</h3>
+            <div class="meta">Aralık 2025 – Nisan 2026 · Ankara</div>
+          </div>
+          <img class="company-logo" src="assets/lenora-logo.png" alt="LENORA Bilişim logosu">
+        </div>
+      </div>
+      <div class="item reveal">
+        <div class="item-row">
+          <div>
+            <h3>Venus Robotik — Engineering Intern</h3>
+            <div class="meta">Nisan 2026 – Devam ediyor · Ankara</div>
+          </div>
+          <img class="company-logo" src="assets/venus-logo.jpg" alt="Venus Robotik logosu">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a href="https://github.com/krmnlhmza" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/krmnlhmza" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="copy">© 2026 Muhammed Hamza Karamanlı</span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("visible");
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>

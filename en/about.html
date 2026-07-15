@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Muhammed Hamza Karamanlı</title>
+  <meta name="description" content="About Muhammed Hamza Karamanlı — Software Engineering, ÇankaYazılım, and work experience.">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a class="brand" href="index.html">
+      <img src="../assets/profil.jpg" alt="Muhammed Hamza Karamanlı">
+      Muhammed Hamza Karamanlı
+    </a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="about.html">About</a>
+    <a class="lang" href="../hakkimda.html">TR</a>
+  </div>
+</nav>
+
+<section id="about" style="padding-top: 140px;">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">About</div>
+    </div>
+    <p class="reveal" style="max-width: 720px;">I study <strong>Software Engineering</strong> at Çankaya University. I am the founder and team manager of the <strong>ÇankaYazılım</strong> group. I have taken on critical roles in my internships and at university, with experience in process management, planning, requirements analysis, software design, and all remaining stages of the software development life cycle.</p>
+    <p class="reveal" style="max-width: 720px; margin-top: 12px;">Rather than merely adopting new technologies, I prefer to <strong>build</strong> them: instead of leaning on off-the-shelf solutions, I like to go down to the problem itself and design the system from the ground up.</p>
+  </div>
+</section>
+
+<section id="experience" class="alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Experience</div>
+    </div>
+    <div class="timeline">
+      <div class="item reveal">
+        <div class="item-row">
+          <div>
+            <h3>LENORA Bilişim Teknolojileri — Full-Stack AI Developer Intern</h3>
+            <div class="meta">December 2025 – April 2026 · Ankara</div>
+          </div>
+          <img class="company-logo" src="../assets/lenora-logo.png" alt="LENORA Bilişim logo">
+        </div>
+      </div>
+      <div class="item reveal">
+        <div class="item-row">
+          <div>
+            <h3>Venus Robotik — Engineering Intern</h3>
+            <div class="meta">April 2026 – Present · Ankara</div>
+          </div>
+          <img class="company-logo" src="../assets/venus-logo.jpg" alt="Venus Robotik logo">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a href="https://github.com/krmnlhmza" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/krmnlhmza" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="copy">© 2026 Muhammed Hamza Karamanlı</span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("visible");
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>
