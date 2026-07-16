@@ -15,8 +15,6 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
-
 body {
   font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg);
@@ -569,8 +567,8 @@ footer .copy { margin-left: auto; color: var(--muted); font-size: .84rem; }
 /* ---------- Açılış animasyonu ---------- */
 .reveal {
   opacity: 0;
-  transform: translateY(26px);
-  transition: opacity .7s ease, transform .7s ease;
+  transform: translateY(14px);
+  transition: opacity .4s ease, transform .4s ease;
 }
 
 .reveal.visible { opacity: 1; transform: none; }

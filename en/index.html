@@ -230,6 +230,7 @@
         <p>Fill out the form for collaboration; you will receive a response as soon as possible.</p>
       </div>
       <form class="reveal" action="https://formspree.io/f/mjgnglbe" method="POST">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div>
           <label for="name">Your name</label>
           <input type="text" id="name" name="name" required>
@@ -267,6 +268,22 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+  // Smooth scroll for same-page links only (cross-page loads stay instant)
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      const href = a.getAttribute("href");
+      if (href.length > 1) {
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+        history.replaceState(null, "", href);
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        history.replaceState(null, "", location.pathname);
+      }
+    });
+  });
 
   // Form: submit without leaving the page, show result as a toast
   function showToast(message, isError) {
