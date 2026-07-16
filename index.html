@@ -267,6 +267,42 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+  // Form: sayfadan ayrılmadan gönder, sonucu bildirim kutusuyla göster
+  function showToast(message, isError) {
+    const toast = document.createElement("div");
+    toast.className = "toast" + (isError ? " error" : "");
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => toast.classList.add("show"));
+    setTimeout(() => {
+      toast.classList.remove("show");
+      setTimeout(() => toast.remove(), 400);
+    }, 4000);
+  }
+
+  const contactForm = document.querySelector("#iletisim form");
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector("button");
+    btn.disabled = true;
+    try {
+      const res = await fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { "Accept": "application/json" }
+      });
+      if (res.ok) {
+        contactForm.reset();
+        showToast("Mesajınız gönderildi. En kısa sürede dönüş sağlanacaktır. ✓");
+      } else {
+        showToast("Gönderim başarısız oldu. Lütfen tekrar deneyin.", true);
+      }
+    } catch {
+      showToast("Bağlantı hatası. Lütfen tekrar deneyin.", true);
+    }
+    btn.disabled = false;
+  });
 </script>
 
 </body>

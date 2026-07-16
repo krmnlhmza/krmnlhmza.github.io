@@ -540,6 +540,32 @@ footer a:hover { color: var(--accent); }
 
 footer .copy { margin-left: auto; color: var(--muted); font-size: .84rem; }
 
+/* ---------- Bildirim kutusu (toast) ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%) translateY(16px);
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, .25);
+  color: var(--text);
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: .92rem;
+  font-weight: 500;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, .55);
+  opacity: 0;
+  transition: opacity .3s ease, transform .3s ease;
+  z-index: 200;
+  max-width: 90vw;
+  text-align: center;
+  pointer-events: none;
+}
+
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.toast.error { border-color: rgba(255, 130, 130, .5); }
+
 /* ---------- Açılış animasyonu ---------- */
 .reveal {
   opacity: 0;
